@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Scroll Animation</title>
+    <link rel="shortcut icon" href="/favicon.png" type="image/x-icon" />
+    <style>
+      body {
+        font-family: system-ui;
+        background: #000000;
+        color: white;
+        text-align: center;
+      }
+
+      .title {
+        margin-top: 64px;
+      }
+
+      .container {
+        padding: 160px 0;
+        font-size: 160px;
+        font-weight: bold;
+      }
+
+      .blur {
+        animation: blurAnimation both;
+        animation-timeline: view();
+      }
+
+      @keyframes blurAnimation {
+        0% {
+          filter: blur(20px);
+        }
+
+        45%,
+        55% {
+          filter: blur(0px);
+        }
+
+        100% {
+          filter: blur(20px);
+        }
+      }
+
+      @media screen and (max-width: 600px) {
+        .container {
+          font-size: 80px;
+          padding: 80px 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1 class="title">Scroll to see the effect</h1>
+    <h2>⬇️</h2>
+    <div class="container">
+      <p class="blur">Hello</p>
+      <p class="blur">World</p>
+      <p class="blur">I am</p>
+      <p class="blur">a</p>
+      <p class="blur">Front-end</p>
+      <p class="blur">Dev</p>
+    </div>
+  </body>
+</html>
